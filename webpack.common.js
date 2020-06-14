@@ -34,8 +34,12 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "[name].[ext]",
-              outputPath: "./assets/img",
+              name: "assets/img/[name].[ext]",
+              // because it returns some wierd path we need to manually edit url string to correct path
+              // remember it's javaScript object and it recives regular js code to edit all
+              publicPath: function (url) {
+                return url.replace("assets", "..");
+              },
             },
           },
         ],

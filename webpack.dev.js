@@ -8,7 +8,7 @@ const copyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = merge(common, {
   output: {
     filename: "./assets/js/[name].bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "dist/"),
     publicPath: "",
   },
   devServer: {
